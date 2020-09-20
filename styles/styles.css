@@ -45,7 +45,8 @@ header nav {
     width: 100vw;
     height: 224px;
     position: absolute;
-    top: calc(100% - 224px);
+    top: 100%;
+    right: 0;
     display: none;
     background-color: #0000EC;
 }
@@ -65,7 +66,6 @@ header a {
 }
 input:checked~nav {
     display: initial;
-    top: 100%;
 }
 
 /*---HAMBURGUER-ICON---*/
