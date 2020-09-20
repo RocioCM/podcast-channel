@@ -1,0 +1,465 @@
+/*---GENERAL---*/
+* {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    font-family: "IBM Plex Sans", "IBM Plex Mono", monospace;
+    width: 100vw;
+    margin: 0;
+}
+p { 
+    font: 400 14px / 22px "IBM Plex Mono";
+    color: #060A24;
+    letter-spacing: 0;
+    margin: 16px;
+}
+a {
+    text-decoration: none;
+    color: #060A24;
+}
+
+
+
+/*---HEADER---*/
+header {
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    top: 0%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+.menu {
+    width: 100vw;
+    position: relative;
+}
+.logo {
+    margin-left: 16px;
+}
+
+/*---HEADER-MENÚ---*/
+header nav {
+    width: 100vw;
+    height: 224px;
+    position: absolute;
+    top: calc(100% - 224px);
+    display: none;
+    background-color: #0000EC;
+}
+header ul {
+    height: inherit;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 0;
+}
+header a {
+    font: 400 16px / 28px "IBM Plex Mono";
+    letter-spacing: 0;
+    color:#FFFFFF;
+    
+}
+input:checked~nav {
+    display: initial;
+    top: 100%;
+}
+
+/*---HAMBURGUER-ICON---*/
+.fa-bars, .fa-times, .checkbox { 
+    position: absolute;
+    top: calc(5vh - 8px);
+    right: 6vw;
+    width: 16px;
+    height: 16px;
+}
+.fa-times, input:checked~.fa-bars, .checkbox {
+    opacity: 0%;
+}
+.checkbox {
+    cursor: pointer;
+    z-index: 1;
+}
+input:checked~.fa-times {
+    opacity: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+    /*---HEADER-SIZING-AND-POSITIONING¨---*/
+    .logo {
+        margin-left: 100px;
+        width: 36px;
+    }
+    .menu {
+        width: 33.5vw;
+        right: 100px; 
+        align-self: center;
+    }
+    .menu>*:not(nav) {
+        display: none;
+    }
+    header nav {
+        display: initial;
+        height: 10vh;
+        background-color: initial;
+        position: initial;
+
+    }
+    header ul {
+        align-items: center;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    /*---MENU-STYLES---*/
+    header a {
+        color: #060A24;
+        font-weight: 500;
+    }
+    header a:hover {
+        text-decoration: line-through;
+        color: #00F3BB;
+    }
+    header a:active {
+        text-decoration: line-through;
+        color: #060A248F;
+    }
+
+}
+
+/*---MAIN-CONTAINERS---*/
+main {
+    margin-top: 10vh;
+    overflow: hidden;
+}
+
+section {
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+}
+section, .container, .svg-container > div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+#more {
+    margin-bottom: 12vh;
+}
+
+/*--MAIN-ITEMS-SIZING--*/
+iframe {
+    width: 93vw;
+    height: 232px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#us img {
+    transform: translateY(-100px);
+    margin-bottom: -100px;
+    z-index: 1;
+    width: 360px;
+    height: 519px;
+}
+
+.img-container img {
+    width: 320px;
+    height: 243px;
+}
+
+@media screen and (min-width:640px) {
+    /*--MAIN CONTAINERS/ITEMS SIZING AND POSITIONING--*/
+    #home {
+        margin-left: 13.9vw;
+        align-items: flex-start;
+    }
+    #home * {
+        margin-left: 0px;
+    }
+    #home p {
+        width: 628px;
+    }
+
+    .ep-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5%;
+        width: 93%;
+        margin: 20px auto 100px;
+    }
+    iframe {
+        width: 100%;
+        margin: 0;
+    }
+
+    .img-container {
+        flex-flow: row wrap;
+        justify-content: center;
+        width: auto;
+    }
+
+    .svg-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .svg-container div {
+        width: 220px;
+    }
+
+    #more {
+        padding-top: 50px;
+        margin-bottom: initial;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    /*--MAIN CONTAINERS/ITEMS SIZING AND POSITIONING--*/
+    #us, .svg-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 1000px;
+        align-items: flex-start;
+    }
+    #us img {
+        transform: translateY(-120px);
+        width: 457.6px;
+        height: 660px;
+    }
+    .us-container {
+        width: 496px;
+    }
+    .us-container h3 {
+        margin: 16px;
+    }
+
+    .img-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    .img-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .svg-container {
+        display: flex;
+    }
+
+    #more {
+        padding-top: 100px;
+        height: 518px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /*--MAIN CONTAINERS POSITIONING--*/
+    #home {
+        margin-top: 16vh;
+    }
+    .ep-container {
+        margin: 20px 100px 100px 100px;
+        grid-gap: 72px;
+        width: calc(100vw - 200px);
+    }
+
+    #us {
+        margin-left: calc(50vw - 500px);
+    }
+}
+
+/*---TITLES AND TEXT SIZING---*/
+
+h1, h3 {
+    font: 400 36px / 42px "IBM Plex Sans";
+    color: #060A24;
+    letter-spacing: 0;
+    align-self: flex-start;
+    margin-left: 16px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.line-thr::after {
+    content:"";
+    display: block;
+}
+.line-thr {
+    text-decoration: line-through;
+}
+.hid-mob {
+    display: none;
+}
+
+.background>h3 {
+    color: #FFFFFF;
+}
+
+#more>h3 {
+    align-self: center;
+    text-align: center;
+    margin-right: 16px;
+}
+
+#topics  p {
+    font: 600 24px / 32px "IBM Plex Sans";
+    text-align: center;
+}
+
+@media screen and (min-width:1024px) {
+    /*--TITLES POSITIONING--*/
+    h3, #home {
+        margin-left: 110px;
+    }
+    #more>h3, #us>h3 {
+        margin-left: 0px;
+    }
+    #more>h3 {
+        margin-right: 0px;
+    }
+ 
+    .line-thr::after {
+        display: initial;
+    }
+    .blue {
+        color: #0000EC;
+    }
+    .hid-mob {
+        display: initial;
+    }
+    .hid-desk {
+        display: none;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /*--TEXT-SIZING--*/
+    p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    /*--TITLES-FONT-SIZING--*/
+    h1 {
+        font-size: 64px;
+        line-height: 84px;
+    } 
+    h3 {
+        font-size: 48px;
+        line-height: 62px;
+    }
+    h3, #home {
+        margin-left: 200px;
+    }
+}
+
+
+/*---BUTTONS---*/
+.button {
+    background-color: #00F3BB;
+    border: none;
+    font:500 16px / 22px "IBM Plex Mono";
+    text-align: center;
+    width: 288px;
+    height: 48px;
+    margin: 20px auto;
+    padding-top: 13px;
+}
+.button:hover {
+    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 1200px) {
+    .button {
+        font-size: 18px;
+        line-height: 24px;
+        width: auto;
+        height: 56px;
+        padding: 16px 59px;
+    }
+}
+
+/*---BACKGROUNDS---*/
+.background {
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    transform: skewY(-5deg);
+    width: 100vw;
+    padding-bottom: 100px;
+}
+.background > * {
+    transform: skewY(5deg);
+}
+
+
+
+
+/*---FOOTER---*/
+
+footer {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25vh;
+    width: 100vw;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+}
+footer p {
+    text-align: center;
+}
+footer nav {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+}
+.fab {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 28px;
+}
+
+@media screen and (min-width: 640px) {
+    footer {
+        height: 7vw;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .fab {
+        font-size: 18px;
+    }
+    footer p {
+        text-align: initial;
+        margin-left: 5vw;
+        line-height: 28px;
+    }
+    footer nav {
+        margin-right: 5vw;
+    }
+
+    .fa-spotify:hover {
+        color: rgb(0, 240, 92); 
+    }
+    .fa-instagram:hover {
+        color: rgb(240, 0, 148); 
+    }
+    .fa-twitter:hover, .fa-telegram:hover {
+        color: rgb(0, 182, 238); 
+    }
+    .fa-facebook:hover {
+        color: rgb(22, 66, 161); 
+    }
+}
